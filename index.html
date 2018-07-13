@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta charset="utf-8">
+    <meta name="description" content="Have you ever wondered how much you should spend each month?">
+    <meta property="og:url" content="http://limzhiyang.com/codetolearn/project4-budgethelper/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Budget Helper" />
+    <meta property="og:description" content="Have you ever wondered how much you should spend each month?" />
+    <meta property="og:image" content="http://limzhiyang.com/codetolearn/banner-images/project4.jpg" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <title>Budget Helper</title>
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Budget Helper</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="http://limzhiyang.com/codetolearn/" target="_blank">Code to Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://limzhiyang.com/profile/" target="_blank">About Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col-1 col-sm-3"></div>
+          <div class="col-10 col-sm-6">
+            <h1 class="text-center">How much should I spend?</h1>
+            <p class="text-center mt-3">Have you ever wondered how much you should spend each month?<br />Enter your monthly income below and we will calculate it for you.
+          </div>
+          <div class="col-1 col-sm-3"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-1 col-sm-3"></div>
+          <div class="col-10 col-sm-6">
+            <form>
+              <div class="form-group">
+                <input type="number" class="form-control form-control-lg text-center" id="income" placeholder="Your monthly income" onkeyup="getVal()">
+              </div>
+            </form>
+            <p class="text-center text-secondary"><small>Pssst! I know what you are thinking. Don't worry we are not <span class="text-primary"><b>Facebook</b></span>, we will not track and share your income with Cambridge Analytica, <s>we promise</s> ;)</small></p>
+          </div>
+          <div class="col-1 col-sm-3"></div>
+        </div>
+        
+        <div class="row mt-3 mb-5" id="breakdown">
+          <div class="col-1"></div>
+          <div class="col-10">
+            <div class="card-group text-center">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><b>Expenses</b></h5><hr>
+                  <p class="card-text text-secondary description">
+                    Set aside this amount of your income for the essentials such as groceries, utilities, gas for your car and rent. It is important to understand what is considered a "need" vs. a "want"!</p>
+                </div>
+                <div class="card-footer">
+                  <b><p class="mb-0" id="expenses">-</p></b>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><b>"Wants"</b></h5><hr>
+                  <p class="card-text text-secondary">Spend on things that you want but could live without. This $$ allows for flexible spending and, perhaps, a happier life. But we would suggest you to invest in yourself though, buy some books, join some courses.</p>
+                </div>
+                <div class="card-footer">
+                  <b><p class="mb-0" id="wants">-</p></b>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><b>Personal Savings</b></h5><hr>
+                  <p class="card-text text-secondary">This is for your savings and debt repayments. In other words, paying off the past and investing in the future.</p>
+                </div>
+                <div class="card-footer">
+                  <b><p class="mb-0" id="savings">-</p></b>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <p class="mt-4 text-secondary mb-2">Calculated based on 50, 20, 30 Rule</p>
+              <a href="https://www.forbes.com/sites/trulia/2016/07/11/new-to-budgeting-why-you-should-try-the-50-20-30-rule/" target="_blank"><button type="button" class="btn btn-sm btn-outline-primary mb-3">What is it about?</button></a>
+              <hr>
+              <small class="text-secondary mt-3">Lim Zhiyang © 2018</small>
+            </div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+<script>
+
+$("#breakdown").hide(5000);
+
+function getVal() {
+    var mySalary = document.getElementById("income").value;
+
+    var expenses = mySalary * 50/100;
+    document.getElementById("expenses").innerHTML = "$" + expenses;
+
+    var wants = mySalary * 20/100;
+    document.getElementById("wants").innerHTML = "$" + wants;
+
+    var savings = mySalary * 30/100;
+    document.getElementById("savings").innerHTML = "$" + savings;
+
+    console.log(mySalary);
+
+    if (mySalary == '') {
+      $("#breakdown").hide(5000);
+    } else {
+      $("#breakdown").show(5000);
+    }
+}
+
+</script>
